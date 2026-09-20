@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدرسه دخترانه آموزش از راه دور ستایش</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --primary: #7c3aed;
+    --primary-light: #a855f7;
+    --dark: #2d1b4e;
+    --light: #faf7ff;
+  }
+
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.9;
+  }
+
+  /* ===== نوار بالا ===== */
+  header {
+    background: linear-gradient(135deg, #6d28d9, #a855f7);
+    color: #fff;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(109, 40, 217, 0.3);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover { opacity: 0.75; }
+
+  /* ===== بخش خوش آمدگویی ===== */
+  .hero {
+    background: linear-gradient(135deg, #6d28d9 0%, #9333ea 60%, #c084fc 100%);
+    color: #fff;
+    text-align: center;
+    padding: 5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .hero::before { width: 300px; height: 300px; top: -100px; left: -80px; }
+  .hero::after { width: 200px; height: 200px; bottom: -70px; right: -60px; }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+  }
+
+  .welcome-card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 1.5rem;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .welcome-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .welcome-card p {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
+
+  .welcome-card .signature {
+    text-align: left;
+    font-weight: 700;
+    margin-top: 1.5rem;
+  }
+
+  /* ===== بخش ویژگی‌ها ===== */
+  .features {
+    padding: 4rem 5%;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(to left, var(--primary), var(--primary-light));
+    border-radius: 4px;
+    margin: 0.8rem auto 0;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 1.2rem;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 10px 30px rgba(109, 40, 217, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(109, 40, 217, 0.15);
+  }
+
+  .card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card h3 {
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+  }
+
+  .card p { font-size: 0.95rem; color: #555; }
+
+  /* ===== بخش تماس ===== */
+  .contact {
+    background: #fff;
+    padding: 4rem 5%;
+    text-align: center;
+  }
+
+  .contact-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .contact-item {
+    background: var(--light);
+    border: 2px solid #ede9fe;
+    border-radius: 1.2rem;
+    padding: 2rem;
+    transition: 0.3s;
+  }
+
+  .contact-item:hover {
+    border-color: var(--primary-light);
+    background: #fff;
+  }
+
+  .contact-item .icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-item h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-item p, .contact-item a {
+    font-size: 1.15rem;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 700;
+    direction: ltr;
+    display: inline-block;
+  }
+
+  .contact-item .fa-text { direction: rtl; font-weight: 500; }
+
+  /* ===== فوتر ===== */
+  footer {
+    background: var(--dark);
+    color: #c4b5fd;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  footer .name { color: #fff; font-weight: 700; }
+
+  /* ===== حالت موبایل ===== */
+  @media (max-width: 768px) {
+    nav { flex-direction: column; gap: 0.7rem; }
+    .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .hero h1 { font-size: 1.5rem; }
+    .welcome-card { padding: 1.8rem 1.2rem; }
+    .welcome-card p { font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">🌸 ستایش</div>
+    <ul class="nav-links">
+      <li><a href="#home">خانه</a></li>
+      <li><a href="#features">ویژگی‌ها</a></li>
+      <li><a href="#contact">تماس با ما</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>مدرسه دخترانه آموزش از راه دور ستایش</h1>
+  <p class="subtitle">خانه‌ی یادگیری، رشد و درخشش</p>
+
+  <div class="welcome-card">
+    <h2>💌 پیام خوش‌آمدگویی</h2>
+    <p>
+      دانش‌آموزان عزیز و پرتلاش، به مدرسه دخترانه آموزش از راه دور ستایش خوش آمدید!
+    </p>
+    <p>
+      ستایش، خانه‌ی دوم شماست؛ جایی که با آرامش و بدون محدودیت زمان و مکان، در مسیر علم و دانش قدم برمی‌دارید. ما اینجا هستیم تا در هر لحظه همراهتان باشیم؛ با معلمان دلسوز، برنامه‌ی منعطف و پشتیبانی کامل.
+    </p>
+    <p>
+      یادتان باشد: شما ستاره‌های درخشان فردای این سرزمین هستید. آرزوی موفقیت و شادکامی برای تک‌تک شما عزیزان داریم. ⭐
+    </p>
+    <p class="signature">با احترام — خانواده بزرگ ستایش</p>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <h2 class="section-title">چرا مدرسه ستایش؟</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>آموزش از راه دور</h3>
+      <p>یادگیری آسان و بدون نیاز به حضور فیزیکی، در هر ساعت از شبانه‌روز.</p>
+    </div>
+    <div class="card">
+      <div class="icon">👩‍🏫</div>
+      <h3>معلمان مجرب</h3>
+      <p>تدریس توسط کادری مجرب و دلسوز با پشتیبانی کامل از دانش‌آموزان.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>محتوای آموزشی</h3>
+      <p>دسترسی به جزوات، آزمون‌ها و منابع آموزشی به‌روز و کامل.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💜</div>
+      <h3>محیطی امن و آرام</h3>
+      <p>فضایی مطمئن و مناسب برای رشد علمی و شخصیتی دانش‌آموزان دختر.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">تماس با ما</h2>
+  <div class="contact-box">
+    <div class="contact-item">
+      <div class="icon">📞</div>
+      <h3>تلفن</h3>
+      <a href="tel:02538820275">025-38820275</a>
+    </div>
+    <div class="contact-item">
+      <div class="icon">📍</div>
+      <h3>آدرس</h3>
+      <p class="fa-text">نیروگاه، توحید ۲۳، خلیلی ۴</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><span class="name">مدرسه دخترانه آموزش از راه دور ستایش</span></p>
+  <p>تمامی حقوق محفوظ است © ۱۴۰۳</p>
+</footer>
+
+</body>
+</html>
