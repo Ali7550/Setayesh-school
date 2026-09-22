@@ -1,386 +1,1106 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مدرسه دخترانه آموزش از راه دور ستایش</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#243139;
-    --navy:#1f3b4d;
-    --navy-deep:#152a37;
-    --gold:#c28840;
-    --gold-light:#e0b978;
-    --sage:#74896f;
-    --sage-light:#e7ede4;
-    --cream:#fbf7f0;
-    --card:#f1ead9;
-    --line:rgba(31,59,77,0.14);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Vazirmatn', sans-serif;
-    line-height:1.85;
-    font-size:17px;
-  }
-  h1,h2,h3,.display{
-    font-family:'Aref Ruqaa', serif;
-    color:var(--navy-deep);
-    line-height:1.4;
-    margin:0;
-  }
-  img,svg{max-width:100%;display:block;}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 28px;}
-  a{color:inherit;text-decoration:none;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  /* Header */
-  header{
-    position:sticky;top:0;z-index:20;
-    background:rgba(251,247,240,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 0;
-  }
-  .brand{
-    display:flex;align-items:center;gap:12px;
-    font-family:'Aref Ruqaa', serif;
-    font-size:1.3rem;color:var(--navy-deep);
-  }
-  .brand svg{width:38px;height:38px;flex-shrink:0;}
-  nav.links{display:flex;gap:30px;font-size:0.96rem;}
-  nav.links a{position:relative;padding:4px 0;transition:color .2s;}
-  nav.links a:hover{color:var(--gold);}
-  .menu-btn{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--navy-deep);}
+    <meta name="description" content="مدرسه دخترانه آموزش از راه دور ستایش در شهر قم - ویژه دانش‌آموزان مقطع متوسطه دوم">
+    <meta name="keywords" content="مدرسه ستایش، مدرسه دخترانه، آموزش از راه دور، قم، متوسطه دوم">
+    <meta name="author" content="مدرسه دخترانه آموزش از راه دور ستایش">
 
-  @media(max-width:780px){
-    nav.links{
-      position:absolute;top:100%;right:0;left:0;
-      flex-direction:column;background:var(--cream);
-      padding:18px 28px;gap:16px;border-bottom:1px solid var(--line);
-      display:none;
-    }
-    nav.links.open{display:flex;}
-    .menu-btn{display:block;}
-  }
+    <title>مدرسه دخترانه آموزش از راه دور ستایش | قم</title>
 
-  /* Hero */
-  .hero{
-    position:relative;overflow:hidden;
-    padding:80px 0 90px;
-    background:linear-gradient(180deg, var(--cream) 0%, #f6efe1 100%);
-  }
-  .hero-grid{
-    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;
-  }
-  .eyebrow-tag{
-    color:var(--gold);font-size:0.95rem;font-weight:600;margin-bottom:14px;display:block;
-  }
-  .hero h1{font-size:clamp(2rem, 3.6vw, 2.9rem);}
-  .hero p.lead{
-    margin-top:20px;font-size:1.12rem;color:#3c4a53;max-width:48ch;
-  }
-  .cta-row{margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;}
-  .btn{
-    display:inline-block;padding:14px 30px;border-radius:2px;
-    font-weight:600;font-size:0.97rem;transition:transform .2s, box-shadow .2s;
-  }
-  .btn-primary{background:var(--navy);color:#fff;}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(31,59,77,0.25);}
-  .btn-outline{border:1.5px solid var(--navy);color:var(--navy);}
-  .btn-outline:hover{background:var(--navy);color:#fff;}
-  .hero-art{position:relative;}
+    <style>
 
-  /* Welcome message banner */
-  .welcome{
-    background:var(--navy);color:#eef2f0;position:relative;overflow:hidden;
-  }
-  .welcome .wrap{padding:70px 28px;position:relative;z-index:1;}
-  .welcome .quote-mark{
-    font-family:'Aref Ruqaa',serif;font-size:5rem;color:var(--gold);line-height:0.5;opacity:0.8;
-  }
-  .welcome h2{color:#fff;font-size:clamp(1.5rem,2.6vw,2rem);margin-top:10px;}
-  .welcome p{color:#d3ddd9;font-size:1.05rem;max-width:70ch;margin-top:20px;}
-  .welcome .sign{margin-top:26px;color:var(--gold-light);font-family:'Aref Ruqaa',serif;font-size:1.15rem;}
+        /* =========================
+           تنظیمات اصلی
+        ========================== */
 
-  /* Sections */
-  section{padding:84px 0;}
-  .section-head{max-width:58ch;margin-bottom:48px;}
-  .section-head .eyebrow-tag{margin-bottom:10px;}
-  .section-head h2{font-size:clamp(1.6rem,2.8vw,2.2rem);}
-  .section-head p{margin-top:14px;color:#4a5860;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  .about{background:#fff;}
-  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:center;}
-  .about-figure{background:var(--sage-light);border-radius:2px;padding:36px;}
-  .stat-row{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap;}
-  .stat b{display:block;font-family:'Aref Ruqaa',serif;font-size:1.9rem;color:var(--navy-deep);}
-  .stat span{font-size:0.88rem;color:#5a6870;}
+        html {
+            scroll-behavior: smooth;
+        }
 
-  /* Programs / how it works */
-  .programs{background:var(--cream);}
-  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .card{background:#fff;border:1px solid var(--line);border-radius:2px;padding:30px 24px;}
-  .card .icon{width:42px;height:42px;margin-bottom:16px;color:var(--gold);}
-  .card h3{font-size:1.15rem;margin-bottom:10px;}
-  .card p{color:#4a5860;font-size:0.96rem;margin:0;}
+        body {
+            direction: rtl;
+            font-family:
+                "B Nazanin",
+                "Nazanin",
+                "Lotus",
+                "B Lotus",
+                Tahoma,
+                Arial,
+                sans-serif;
 
-  /* Values */
-  .values{background:var(--navy);color:#eef2f0;}
-  .values .section-head h2{color:#fff;}
-  .values .section-head p{color:#c7d4d9;}
-  .values-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.15);}
-  .value-item{padding:32px 8px 0;border-left:1px solid rgba(255,255,255,0.15);}
-  .value-item:last-child{border-left:none;}
-  .value-item b{font-family:'Aref Ruqaa',serif;font-size:1.25rem;color:var(--gold-light);display:block;margin-bottom:10px;}
-  .value-item p{color:#c7d4d9;font-size:0.94rem;}
+            background: #fff8fc;
+            color: #3d3040;
+            line-height: 1.9;
+        }
 
-  /* Contact */
-  .contact{background:#fff;}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
-  .info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
-  .info-row:last-child{border-bottom:none;}
-  .info-row .icon{width:22px;height:22px;color:var(--gold);flex-shrink:0;margin-top:3px;}
-  .info-row b{display:block;margin-bottom:4px;}
-  .info-row span{color:#5a6870;font-size:0.95rem;}
-  .map-box{
-    background:var(--sage-light);border-radius:2px;padding:30px;
-    display:flex;align-items:center;justify-content:center;min-height:220px;
-  }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-  footer{background:var(--navy-deep);color:#cfd9dc;padding:48px 0 26px;}
-  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,0.12);}
-  .footer-brand{font-family:'Aref Ruqaa',serif;font-size:1.25rem;color:#fff;}
-  .footer-brand p{font-family:'Vazirmatn',sans-serif;font-size:0.88rem;color:#9db0b7;margin-top:8px;max-width:36ch;}
-  .footer-links a{display:block;font-size:0.9rem;color:#9db0b7;margin-bottom:9px;}
-  .footer-links a:hover{color:var(--gold-light);}
-  .copyright{padding-top:22px;text-align:center;font-size:0.83rem;color:#7f939a;}
 
-  @media(max-width:900px){
-    .hero-grid, .about-grid, .contact-grid{grid-template-columns:1fr;}
-    .hero-art{order:-1;}
-    .card-grid{grid-template-columns:1fr 1fr;}
-    .values-list{grid-template-columns:1fr;}
-    .value-item{border-left:none;border-top:1px solid rgba(255,255,255,0.15);padding-top:24px;}
-  }
-  @media(max-width:560px){
-    .card-grid{grid-template-columns:1fr;}
-  }
-</style>
+        /* =========================
+           نوار بالای سایت
+        ========================== */
+
+        .top-bar {
+            background: linear-gradient(
+                90deg,
+                #8e3a76,
+                #b84b8d,
+                #d86aa5
+            );
+
+            color: white;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           هدر
+        ========================== */
+
+        header {
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 3px 15px rgba(120, 50, 100, 0.10);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 15px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+
+        /* لوگوی متنی */
+
+        .school-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-symbol {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #b84b8d,
+                #7c4d9e
+            );
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+            font-weight: bold;
+
+            box-shadow: 0 5px 15px rgba(130, 60, 130, 0.25);
+        }
+
+        .school-name {
+            color: #71345f;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .school-subtitle {
+            color: #8f7189;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           منو
+        ========================== */
+
+        nav {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        nav a {
+            padding: 8px 13px;
+            color: #633c5b;
+            font-size: 16px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #f8e2ef;
+            color: #9c3e77;
+        }
+
+
+        /* =========================
+           بخش اصلی
+        ========================== */
+
+        .hero {
+            min-height: 560px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(125, 55, 115, 0.93),
+                    rgba(191, 73, 135, 0.88)
+                );
+
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+
+            top: -160px;
+            left: -100px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.07);
+
+            bottom: -130px;
+            right: -80px;
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            width: 100%;
+
+            margin: auto;
+            padding: 70px 25px;
+
+            position: relative;
+            z-index: 2;
+
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            background: rgba(255,255,255,0.18);
+
+            padding: 7px 18px;
+
+            border-radius: 30px;
+
+            margin-bottom: 20px;
+
+            font-size: 15px;
+
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 58px);
+            line-height: 1.4;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 18px;
+            color: #fff5fb;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 11px 25px;
+
+            border-radius: 30px;
+
+            font-size: 17px;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #8d3c72;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.7);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+
+        /* =========================
+           بخش‌های عمومی
+        ========================== */
+
+        section {
+            padding: 75px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #71345f;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #8c7388;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           معرفی
+        ========================== */
+
+        .welcome {
+            background: white;
+        }
+
+        .welcome-box {
+            background: linear-gradient(
+                135deg,
+                #fff3f9,
+                #faf3ff
+            );
+
+            border-radius: 25px;
+
+            padding: 40px;
+
+            border: 1px solid #f1dbea;
+
+            box-shadow: 0 10px 30px rgba(130, 70, 120, 0.07);
+        }
+
+        .welcome-box h3 {
+            color: #8f3c73;
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-box p {
+            font-size: 18px;
+            color: #554653;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           کارت‌ها
+        ========================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 30px 25px;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 25px rgba(100, 50, 100, 0.08);
+
+            border: 1px solid #f3e2ef;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow:
+                0 15px 35px rgba(100, 50, 100, 0.12);
+        }
+
+        .card-icon {
+            width: 65px;
+            height: 65px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 50%;
+
+            background: #f8e4f1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+        }
+
+        .card h3 {
+            color: #773d68;
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #756674;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           اطلاعات تماس
+        ========================== */
+
+        .contact {
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff3f9,
+                    #f7f0ff
+                );
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 22px;
+        }
+
+        .contact-item {
+            background: white;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            display: flex;
+            align-items: flex-start;
+
+            gap: 18px;
+
+            box-shadow: 0 7px 20px rgba(100,50,100,0.07);
+        }
+
+        .contact-icon {
+            min-width: 50px;
+            height: 50px;
+
+            background: #f3dced;
+
+            color: #8e3b72;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 23px;
+        }
+
+        .contact-item h3 {
+            color: #74385f;
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        .contact-item p {
+            color: #665865;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           دکمه تماس
+        ========================== */
+
+        .phone-button {
+            display: inline-block;
+
+            margin-top: 8px;
+
+            padding: 7px 16px;
+
+            background: #a64680;
+
+            color: white;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .phone-button:hover {
+            background: #813660;
+        }
+
+
+        /* =========================
+           پیام پایانی
+        ========================== */
+
+        .message {
+            text-align: center;
+            background: white;
+        }
+
+        .message-box {
+            max-width: 800px;
+            margin: auto;
+
+            padding: 45px 30px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8f3c73,
+                    #74469b
+                );
+
+            color: white;
+
+            box-shadow: 0 15px 35px rgba(100,50,100,0.15);
+        }
+
+        .message-box h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .message-box p {
+            font-size: 18px;
+            color: #fff6fc;
+        }
+
+
+        /* =========================
+           فوتر
+        ========================== */
+
+        footer {
+            background: #45253e;
+
+            color: #eadbe6;
+
+            padding: 30px 20px;
+
+            text-align: center;
+        }
+
+        footer .school-footer-name {
+            color: white;
+            font-size: 21px;
+            margin-bottom: 7px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        .copyright {
+            margin-top: 12px;
+            color: #c9b4c4;
+        }
+
+
+        /* =========================
+           موبایل
+        ========================== */
+
+        @media (max-width: 750px) {
+
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+
+            .school-logo {
+                justify-content: center;
+            }
+
+            .school-name {
+                font-size: 19px;
+            }
+
+            .hero {
+                min-height: 500px;
+                text-align: center;
+            }
+
+            .hero-container {
+                padding: 60px 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            section {
+                padding: 55px 15px;
+            }
+
+            .welcome-box {
+                padding: 28px 20px;
+            }
+
+            .welcome-box h3 {
+                font-size: 24px;
+            }
+
+            .welcome-box p {
+                font-size: 17px;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
 
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 4L44 14V24C44 34 35 42 24 44C13 42 4 34 4 24V14L24 4Z" stroke="#1f3b4d" stroke-width="2"/>
-        <path d="M24 14L34 19V24C34 29 30 33 24 35C18 33 14 29 14 24V19L24 14Z" fill="#c28840" opacity="0.85"/>
-      </svg>
-      مدرسه دخترانه ستایش
-    </div>
-    <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
-    <nav class="links" id="navLinks">
-      <a href="#about">درباره ما</a>
-      <a href="#programs">آموزش از راه دور</a>
-      <a href="#values">ارزش‌ها</a>
-      <a href="#contact">تماس با ما</a>
-    </nav>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow-tag">آموزش از راه دور، بدون محدودیت مکان</span>
-      <h1>مدرسه دخترانه<br>آموزش از راه دور ستایش</h1>
-      <p class="lead">یادگیری با کیفیت، همراه با انعطاف زمانی، برای دانش‌آموزانی که می‌خواهند در محیطی امن و منظم، از هر کجا که هستند، تحصیل کنند.</p>
-      <div class="cta-row">
-        <a href="#contact" class="btn btn-primary">تماس با ما</a>
-        <a href="#about" class="btn btn-outline">آشنایی با مدرسه</a>
-      </div>
-    </div>
-    <div class="hero-art">
-      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="200" cy="200" r="190" fill="#f1ead9"/>
-        <g transform="translate(200,200)">
-          <g stroke="#1f3b4d" stroke-width="1.5" fill="none" opacity="0.55">
-            <polygon points="0,-130 37,-119 75,-92 92,-52 92,52 75,92 37,119 0,130 -37,119 -75,92 -92,52 -92,-52 -75,-92 -37,-119"/>
-          </g>
-          <g fill="#c28840">
-            <polygon points="0,-70 20,-20 70,0 20,20 0,70 -20,20 -70,0 -20,-20"/>
-          </g>
-          <circle r="8" fill="#1f3b4d"/>
-          <g stroke="#74896f" stroke-width="1.2" fill="none" opacity="0.7">
-            <circle r="105"/>
-            <circle r="150"/>
-          </g>
-        </g>
-      </svg>
-    </div>
-  </div>
-</section>
+    <!-- نوار بالایی -->
 
-<section class="welcome">
-  <div class="wrap">
-    <span class="quote-mark">“</span>
-    <h2>پیام خوش‌آمدگویی به دانش‌آموزان</h2>
-    <p>
-      به مدرسه دخترانه ستایش خوش آمدید! خوشحالیم که شما را در جمع دانش‌آموزانمان می‌بینیم.
-      اینجا، فارغ از فاصله و مکان، فرصتی فراهم کرده‌ایم تا با آرامش خاطر، در کنار معلمانی
-      دلسوز و همراه، مسیر یادگیری خود را با اعتماد به نفس طی کنید. باور داریم که هر یک از شما
-      استعدادهای ارزشمندی دارید و وظیفه‌ی ماست که کنار شما باشیم تا این استعدادها شکوفا شوند.
-      امیدواریم سالی پر از یادگیری، پرسش‌گری و رشد را پیش رو داشته باشید.
-    </p>
-    <p class="sign">با آرزوی موفقیت — خانواده‌ی مدرسه دخترانه ستایش</p>
-  </div>
-</section>
+    <div class="top-bar">
+        مدرسه دخترانه آموزش از راه دور ستایش | قم
+    </div>
 
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <div class="about-figure">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="30" width="280" height="200" rx="4" fill="#fff"/>
-        <rect x="30" y="55" width="90" height="10" rx="2" fill="#c28840"/>
-        <rect x="30" y="80" width="220" height="8" rx="2" fill="#dfe4d9"/>
-        <rect x="30" y="98" width="220" height="8" rx="2" fill="#dfe4d9"/>
-        <rect x="30" y="116" width="150" height="8" rx="2" fill="#dfe4d9"/>
-        <circle cx="230" cy="180" r="34" fill="#1f3b4d"/>
-        <path d="M215 185 L226 196 L248 168" stroke="#e0b978" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <div>
-      <span class="eyebrow-tag">درباره ما</span>
-      <h2>یادگیری آنلاین با ساختار و همراهی</h2>
-      <p style="margin-top:18px;color:#4a5860;">
-        مدرسه دخترانه ستایش با تمرکز بر آموزش از راه دور، محیطی منظم و حمایتگر برای دانش‌آموزانی
-        فراهم کرده که به هر دلیل امکان حضور فیزیکی روزانه در مدرسه را ندارند. کلاس‌های آنلاین،
-        پشتیبانی درسی منظم و ارتباط مستمر با خانواده‌ها، بخشی از رویکرد ماست.
-      </p>
-      <p style="margin-top:14px;color:#4a5860;">
-        هدف ما این است که کیفیت آموزش، فارغ از مکان دانش‌آموز، حفظ شود و هر دانش‌آموز با آرامش
-        و اعتماد به نفس به یادگیری ادامه دهد.
-      </p>
-    </div>
-  </div>
-</section>
 
-<section class="programs" id="programs">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow-tag">آموزش از راه دور</span>
-      <h2>مسیر یادگیری در ستایش</h2>
-      <p>ترکیبی از کلاس‌های آنلاین زنده، محتوای درسی قابل بازبینی و پشتیبانی مستمر.</p>
-    </div>
-    <div class="card-grid">
-      <div class="card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-        <h3>کلاس‌های آنلاین زنده</h3>
-        <p>برگزاری منظم کلاس‌های درسی به‌صورت آنلاین با امکان تعامل مستقیم با معلم و همکلاسی‌ها.</p>
-      </div>
-      <div class="card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
-        <h3>محتوای آموزشی قابل بازبینی</h3>
-        <p>ضبط جلسات و در دسترس بودن منابع درسی، برای مرور دوباره در هر زمان که دانش‌آموز نیاز داشته باشد.</p>
-      </div>
-      <div class="card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        <h3>پشتیبانی مستمر</h3>
-        <p>ارتباط منظم معلمان با دانش‌آموزان و خانواده‌ها برای پیگیری روند یادگیری و رفع اشکال.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- هدر -->
 
-<section class="values" id="values">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow-tag" style="color:var(--gold-light);">ارزش‌های ما</span>
-      <h2>آنچه به آن باور داریم</h2>
-      <p>سه اصلی که پایه‌ی هر تصمیم آموزشی و تربیتی در ستایش هستند.</p>
-    </div>
-    <div class="values-list">
-      <div class="value-item">
-        <b>دسترسی برابر</b>
-        <p>باور داریم فاصله و مکان نباید مانع دسترسی هر دانش‌آموز به آموزش باکیفیت باشد.</p>
-      </div>
-      <div class="value-item">
-        <b>همراهی خانواده</b>
-        <p>ارتباط نزدیک با خانواده‌ها را بخشی جدایی‌ناپذیر از فرآیند آموزش می‌دانیم.</p>
-      </div>
-      <div class="value-item">
-        <b>پیگیری فردی</b>
-        <p>روند یادگیری هر دانش‌آموز را جداگانه پیگیری می‌کنیم تا هیچ‌کس عقب نماند.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <header>
 
-<section class="contact" id="contact">
-  <div class="wrap contact-grid">
-    <div>
-      <span class="eyebrow-tag">تماس با ما</span>
-      <h2>در تماس باشید</h2>
-      <div style="margin-top:22px;">
-        <div class="info-row">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><b>آدرس</b><span>نیروگاه، توحید ۲۳، خلیلی ۴</span></div>
+        <div class="header-container">
+
+            <div class="school-logo">
+
+                <div class="logo-symbol">
+                    س
+                </div>
+
+                <div>
+                    <div class="school-name">
+                        مدرسه ستایش
+                    </div>
+
+                    <div class="school-subtitle">
+                        آموزش از راه دور دخترانه | متوسطه دوم
+                    </div>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <a href="#home">
+                    خانه
+                </a>
+
+                <a href="#about">
+                    معرفی مدرسه
+                </a>
+
+                <a href="#services">
+                    امکانات
+                </a>
+
+                <a href="#contact">
+                    تماس با ما
+                </a>
+
+            </nav>
+
         </div>
-        <div class="info-row">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
-          <div><b>تلفن</b><span dir="ltr" style="unicode-bidi:embed;">025-38820275</span></div>
-        </div>
-        <div class="info-row">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <div><b>ساعات پاسخگویی</b><span>شنبه تا چهارشنبه، ۸ الی ۱۴</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="map-box">
-      <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
-        <rect width="200" height="160" fill="#e7ede4"/>
-        <path d="M20 130 L60 40 L100 90 L140 30 L180 130 Z" fill="none" stroke="#74896f" stroke-width="2" opacity="0.5"/>
-        <circle cx="100" cy="80" r="10" fill="#c28840"/>
-        <path d="M100 80 L100 60" stroke="#1f3b4d" stroke-width="2"/>
-        <circle cx="100" cy="55" r="5" fill="#1f3b4d"/>
-      </svg>
-    </div>
-  </div>
-</section>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        مدرسه دخترانه ستایش
-        <p>آموزش از راه دور، با کیفیت و همراهی مستمر، برای دختران این سرزمین.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#about">درباره ما</a>
-        <a href="#programs">آموزش از راه دور</a>
-        <a href="#values">ارزش‌ها</a>
-        <a href="#contact">تماس با ما</a>
-      </div>
-    </div>
-    <p class="copyright">© تمامی حقوق برای مدرسه دخترانه آموزش از راه دور ستایش محفوظ است.</p>
-  </div>
-</footer>
+    </header>
 
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinks = document.getElementById('navLinks');
-  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-</script>
+
+    <!-- بخش اصلی -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="hero-container">
+
+                <span class="hero-badge">
+                    مدرسه دخترانه آموزش از راه دور
+                </span>
+
+                <h1>
+                    مدرسه ستایش
+                </h1>
+
+                <h2>
+                    مسیر یادگیری، رشد و ساختن آینده‌ای روشن
+                </h2>
+
+                <p>
+                    به وب‌سایت مدرسه دخترانه آموزش از راه دور ستایش
+                    خوش آمدید. ما تلاش می‌کنیم محیطی مناسب برای
+                    ادامه تحصیل، رشد علمی و پرورش استعدادهای
+                    دانش‌آموزان فراهم کنیم.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#about" class="btn btn-primary">
+                        آشنایی با مدرسه
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        اطلاعات تماس
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- معرفی -->
+
+        <section class="welcome" id="about">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        به مدرسه ستایش خوش آمدید
+                    </h2>
+
+                    <p>
+                        همراه شما در مسیر ادامه تحصیل و پیشرفت
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-box">
+
+                    <h3>
+                        پیام خوش‌آمدگویی
+                    </h3>
+
+                    <p>
+                        دانش‌آموز عزیز، به مدرسه دخترانه آموزش از راه دور
+                        ستایش خوش آمدی.
+                    </p>
+
+                    <p>
+                        حضور تو در این مدرسه، آغاز مسیری برای یادگیری،
+                        رشد و ساختن آینده‌ای بهتر است. ما باور داریم
+                        هر دانش‌آموز توانایی‌های ارزشمندی دارد و با
+                        تلاش، پشتکار و برنامه‌ریزی می‌تواند به اهداف
+                        خود دست پیدا کند.
+                    </p>
+
+                    <p>
+                        مدرسه ستایش تلاش می‌کند در کنار تو باشد تا
+                        فرصت ادامه تحصیل را با آرامش و انگیزه دنبال
+                        کنی و قدم‌به‌قدم برای آینده‌ای روشن‌تر آماده
+                        شوی.
+                    </p>
+
+                    <p>
+                        برایت روزهایی سرشار از موفقیت، امید و پیشرفت
+                        آرزو داریم.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- امکانات -->
+
+        <section id="services">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        ویژگی‌های مدرسه
+                    </h2>
+
+                    <p>
+                        همراهی با دانش‌آموزان در مسیر تحصیل
+                    </p>
+
+                </div>
+
+
+                <div class="cards">
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            آموزش از راه دور
+                        </h3>
+
+                        <p>
+                            فراهم کردن امکان ادامه تحصیل
+                            برای دانش‌آموزان در قالب آموزش از راه دور.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            🎓
+                        </div>
+
+                        <h3>
+                            متوسطه دوم
+                        </h3>
+
+                        <p>
+                            ارائه خدمات آموزشی برای دانش‌آموزان
+                            مقطع متوسطه دوم.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            🌱
+                        </div>
+
+                        <h3>
+                            رشد و پیشرفت
+                        </h3>
+
+                        <p>
+                            توجه به مسیر رشد علمی و آموزشی
+                            دانش‌آموزان و همراهی با آنان.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            💡
+                        </div>
+
+                        <h3>
+                            فرصت دوباره برای یادگیری
+                        </h3>
+
+                        <p>
+                            فراهم کردن بستری برای ادامه مسیر
+                            تحصیلی و دستیابی به اهداف آموزشی.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- پیام -->
+
+        <section class="message">
+
+            <div class="container">
+
+                <div class="message-box">
+
+                    <h2>
+                        آینده از همین امروز ساخته می‌شود
+                    </h2>
+
+                    <p>
+                        با انگیزه یاد بگیر، با امید ادامه بده
+                        و برای آینده‌ای که شایسته آن هستی تلاش کن.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- تماس -->
+
+        <section class="contact" id="contact">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        اطلاعات تماس
+                    </h2>
+
+                    <p>
+                        برای دریافت اطلاعات بیشتر با مدرسه در ارتباط باشید.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ☎
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                تلفن مدرسه
+                            </h3>
+
+                            <p>
+                                02538820275
+                            </p>
+
+                            <a
+                                href="tel:02538820275"
+                                class="phone-button"
+                            >
+                                تماس با مدرسه
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                نشانی مدرسه
+                            </h3>
+
+                            <p>
+                                قم، نیروگاه، توحید ۲۳،
+                                خلیلی ۴
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            🏫
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                نوع مدرسه
+                            </h3>
+
+                            <p>
+                                مدرسه دخترانه آموزش از راه دور
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            🎓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                مقطع تحصیلی
+                            </h3>
+
+                            <p>
+                                متوسطه دوم
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- فوتر -->
+
+    <footer>
+
+        <div class="school-footer-name">
+            مدرسه دخترانه آموزش از راه دور ستایش
+        </div>
+
+        <p>
+            قم | متوسطه دوم
+        </p>
+
+        <p class="copyright">
+            تمامی حقوق این وب‌سایت متعلق به مدرسه ستایش است.
+        </p>
+
+    </footer>
+
 
 </body>
 </html>
