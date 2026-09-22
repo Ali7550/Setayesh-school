@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بخش تماس با ما | مدرسه ستایش</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- نوار بالایی -->
+    <div class="top-bar">
+        مدرسه دخترانه آموزش از راه دور ستایش | قم
+    </div>
+
+    <!-- هدر و منو -->
+    <header>
+        <div class="header-container">
+            <div class="school-logo">
+                <div class="logo-symbol">س</div>
+                <div>
+                    <div class="school-name">مدرسه ستایش</div>
+                    <div class="school-subtitle">آموزش از راه دور دخترانه | متوسطه دوم</div>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html">خانه</a>
+                <a href="education.html">آموزش</a>
+                <a href="cultural.html">فرهنگی</a>
+                <a href="exams.html">نمونه سوالات</a>
+                <a href="news.html">اخبار</a>
+                <a href="announcements.html">اطلاعیه‌ها</a>
+                <a href="letters.html">بخش نامه‌ها</a>
+                <a href="contact.html">تماس با ما</a>
+                <a href="location.html">آدرس مدرسه</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوای اصلی این صفحه -->
+    <main>
+        <section class="welcome" style="min-height: 65vh;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>بخش آموزش</h2>
+                    <p>اطلاعات و مطالب مربوط به آموزش</p>
+                </div>
+
+                <div class="welcome-box">
+                    <h3>محتوای این بخش</h3>
+                    <p>اینجا می‌توانید متن، تصویر، فایل PDF یا هر محتوای دیگری مربوط به این بخش را قرار دهید.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="school-footer-name">
+            مدرسه دخترانه آموزش از راه دور ستایش
+        </div>
+        <p>قم | متوسطه دوم</p>
+        <p class="copyright">
+            تمامی حقوق این وب‌سایت متعلق به مدرسه ستایش است.
+        </p>
+    </footer>
+
+</body>
+</html>
